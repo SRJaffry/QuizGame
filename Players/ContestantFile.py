@@ -1,7 +1,8 @@
 # ContestantFile.py
 
-from Questions import ManageQuestions
-from quiz_data import correct_answers_dict
+from Quiz.Questions import ManageQuestions
+from Quiz.quiz_data import correct_answers_dict
+from HouseKeeping.HouseKeeping import clear_screen
 
 class Contestant:
     contestant_cnt = 0
@@ -48,9 +49,8 @@ class Contestant:
 
         # Play the game Following Number of Times self.Max_allowed_questions
         # while self.No_of_questions_asked < self.Max_allowed_questions:
-        while len_of_question_list < self.Max_allowed_questions:    
-
-            print("--------------\n--------------")
+        while len_of_question_list < self.Max_allowed_questions:
+            print("Player {}: Question {}/{}".format(self.id, len_of_question_list+1, self.Max_allowed_questions))
             
             # 1. Asking the question
             # question_key is the integer value key which we will use to find answers, or see options etc.
@@ -75,4 +75,7 @@ class Contestant:
                 self.score += 1
             # else:
             #     print("Wrong Answer. The correct answer is : {}".format(correct_answers_dict[question_key]))    
+
+            
+            clear_screen()
 

@@ -1,4 +1,4 @@
-from quiz_data import questions_dict, options_dict, correct_answers_dict
+from Quiz.quiz_data import questions_dict, options_dict, correct_answers_dict
 import random
 
 class ManageQuestions():
